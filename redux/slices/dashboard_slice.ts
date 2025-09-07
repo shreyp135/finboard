@@ -21,9 +21,11 @@ const dashboardSlice = createSlice({
   reducers: {
     addWidget: (state, action: PayloadAction<Widget>) => {
       state.widgets.push(action.payload);
+      localStorage.setItem("dashboardState", JSON.stringify(state));
     },
     removeWidget: (state, action: PayloadAction<string>) => {
       state.widgets = state.widgets.filter((w) => w.id !== action.payload);
+      localStorage.setItem("dashboardState", JSON.stringify(state));
     },
   },
 });

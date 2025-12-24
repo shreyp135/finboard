@@ -15,7 +15,7 @@ export default function AddWidgetModal({ isOpen, onClose }: Props) {
   type WidgetType = "chart" | "table" | "card";
 
   const [type, setType] = useState<WidgetType>("card");
-  const [symbol, setSymbol] = useState("AAPL");
+  const [symbol, setSymbol] = useState("RELIANCE.BSE");
 
   const handleAdd = () => {
     dispatch(addWidget({ id: uuidv4(), type, title: symbol }));
@@ -46,7 +46,7 @@ export default function AddWidgetModal({ isOpen, onClose }: Props) {
           type="text"
           value={symbol}
           onChange={(e) => setSymbol(e.target.value.toUpperCase())}
-          placeholder="e.g. AAPL, TSLA, MSFT"
+          placeholder="e.g. GOOGL, RELIANCE.BSE"
         />
 
         <div className="flex justify-end gap-2">
